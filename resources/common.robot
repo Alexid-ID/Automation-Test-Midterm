@@ -13,7 +13,7 @@ ${URL_SHOP}       https://dapper-pastelito-04ff24.netlify.app/shop
 ${URL_CART}       https://dapper-pastelito-04ff24.netlify.app/cart
 
 ### HOME PAGE ### 
-${shop_now_btn}    //*[@id="root"]/div/div[2]/div/button
+${shop_now_btn}    //*[@class="ui large button sc-crozmw hRWtOu"]
 ${shop_tab_btn}    //*[@id="root"]/div/div[1]/div/div/div[4]/ul/li[1]/a
 ${cart_tab_btn}    //*[@id="root"]/div/div[1]/div/div/div[4]/ul/li[2]/a
 
