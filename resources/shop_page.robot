@@ -108,12 +108,20 @@ Seach product no keyword
 
 Search with no key word & Press Enter 
     Page Should Contain Element    ${seach_input}
-    Press Keys    ${seach_input}    \13
+    Press Keys    ${seach_input}    ENTER
     Wait Until Keyword Succeeds    10s    1s    Page Should Contain Element    ${product_container}
     
 Search with no key word & Click search btn
     Page Should Contain Element    ${seach_input}
     Click Element    ${search_btn}
+    Wait Until Keyword Succeeds    10s    1s    Page Should Contain Element    ${product_container}
+
+Search with key word & Press Enter
+    [Arguments]    ${name}
+    Page Should Contain Element    ${seach_input}
+    Input Text    ${seach_input}    ${name}
+    Press Keys    ${seach_input}    ENTER
+    Sleep    2s
     Wait Until Keyword Succeeds    10s    1s    Page Should Contain Element    ${product_container}
 
 Search product 
@@ -131,13 +139,13 @@ Search with keyword not exist
     ${count_item}=    Get Element Count    ${product_item}
     Should Be True    ${count_item} == 0
 
-Verify card product
-    Wait Until Keyword Succeeds    10s    1s    Page Should Contain Element    ${product_item}
-    # get the first product name
-    # ${the_first_product}=    Get WebElement    ${product_item}
-    ${second_product_card}=    Get WebElement    //*[@class='ui container']/div[@class='sc-fWFeAW gWvvMA']/div[2]/div/div/a/div[@class='ui header sc-ejWHKt jFBJAy']
-    ${title_text}=    Get Text    ${second_product_card}
-    # Log To Console    message: ${title_text}
+# Verify card product
+#     Wait Until Keyword Succeeds    10s    1s    Page Should Contain Element    ${product_item}
+#     # get the first product name
+#     # ${the_first_product}=    Get WebElement    ${product_item}
+#     ${second_product_card}=    Get WebElement    //*[@class='ui container']/div[@class='sc-fWFeAW gWvvMA']/div[2]/div/div/a/div[@class='ui header sc-ejWHKt jFBJAy']
+#     ${title_text}=    Get Text    ${second_product_card}
+#     # Log To Console    message: ${title_text}
     
 ### Test category filter ###
 Filter by category
