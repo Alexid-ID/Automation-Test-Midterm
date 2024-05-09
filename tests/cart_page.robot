@@ -42,3 +42,4 @@ TC6:Verify Total Price Calculation in Cart
     Verify Total Price Calculation in Cart 2 products
 
 TC7: Check All Problem
+    Check All Problem
