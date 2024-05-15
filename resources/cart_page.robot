@@ -429,3 +429,24 @@ Check All Problem
     ${value3}=    Set Variable    ${value3}
     ${myresult}=    Evaluate    ${value1} + ${value2} + ${value3}
     Should Be Equal As Strings    ${myresult}    ${totalprice}
+
+Check Out
+    Click Element    ${cart_tab_btn}
+    Click Element    ${alink_shop}
+    Location Should Be    ${URL_SHOP}
+    Wait Until Page Contains Element    ${menu_bar}
+    Wait Until Page Contains Element    ${product_container}
+    Wait Until Element Is Visible    xpath=/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/button
+    Click Element    xpath=/html/body/div/div/div[2]/div[2]/div[1]/div/div[2]/button
+    Wait Until Element Is Visible    xpath=/html/body/div[1]/div/div[1]/div/div/div[4]/ul/li[2]/a/div
+    ${element_text}=    Get Text    xpath=/html/body/div[1]/div/div[1]/div/div/div[4]/ul/li[2]/a/div
+    Should Be Equal As Strings    ${element_text}    1
+    Click Element    ${cart_tab_btn}
+    Wait Until Page Contains Element    //*[@id="root"]/div/div[2]/div/div[1]/table
+    ${quantity_value}=    Get Text    xpath=//*[@id="root"]/div/div[2]/div/div[1]/table/tbody/tr/td[4]/div/div/span
+    Should Be Equal As Strings    ${quantity_value}    1
+    Wait Until Page Contains Element    //*[@id="root"]/div/div[2]/div/div[4]/div
+    ${checkout_value}=    Get Text    //*[@id="root"]/div/div[2]/div/div[4]/div/button
+    Should Be Equal As Strings    ${checkout_value}    Continue to checkout
+    Click Element    //*[@id="root"]/div/div[2]/div/div[4]/div
+    Page Should Not Contain Element    //*[@id="root"]/div/div[2]/div/div[4]/div

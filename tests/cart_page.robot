@@ -43,3 +43,6 @@ TC6:Verify Total Price Calculation in Cart
 
 TC7: Check All Problem
     Check All Problem
+
+TC8: Check Out
+    Check Out
